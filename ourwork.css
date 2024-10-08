@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  height: auto;
+  display: block;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #b8b8b8;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+ul li {
+  display: inline-block;
+}
+
+ul li a {
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+  font-family: "PT Sans", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  text-decoration: none;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease;
+}
+
+ul li a:hover {
+  opacity: 1;
+  text-shadow: 1px 1px 14px rgba(0, 0, 0, 0.775);
+}
+
+.logo {
+  width: 4vh;
+  height: 4vh;
+}
+
+ #section1-contact {
+   position: relative;
+   z-index: 3;
+   /* Set a higher z-index */
+ }
+
+ #section1-contact {
+   height: auto;
+   padding: 200px;
+   z-index: 3;
+ }
+
+    .title-contact {
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      color: rgb(0, 0, 0);
+      font-size: 94px;
+      font-family: "Playfair Display", serif;
+      font-weight: 900;
+      display: block;
+      animation: dropDown 1.5s ease-out forwards;
+    }
+  @keyframes dropDown {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 60px;
+  }
+  }
+  .line{
+    width: 450px;
+    border:none;
+    height:2px;
+    background-color: black;
+    margin: 0 auto;
+  }
+    #contaiener2 {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.835);
+    }
+  
+    #section1, #section2, #section3 {
+      margin: 15vh 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+  
+    .image2 {
+      flex: 1;
+      padding-right: 20px;
+    }
+  
+    .image2 img {
+      max-width: 850px;
+      height: auto;
+      border: 4px solid rgba(208, 206, 206, 0.835);
+    }
+  
+    .text2 {
+      flex: 1;
+      padding-left: 10px;
+      text-align: center;
+    }
+  
+    .text2 h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  
+    .text2 p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }

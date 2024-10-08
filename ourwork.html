@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="ourwork.css">
+  <link rel="stylesheet" href="other.css">
+  <link rel="stylesheet" href="other1.css">
+  <title>Services and Contact</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <nav>
+    <a href="#" class="logo"><img class="logo" src="photo/CarsenDeckerLogo.png" alt="Logo"></a>
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul id="nav-links">
+      <li> <a href="hope.html#section1" target="_blank"><i class="fa-solid fa-house"></i> </a></li>
+      <li> <a href="hope.html#section4-5">About </a></li>
+      <li> <a href="ourwork.html" target="_blank">Services </a></li>
+      <li> <a href="hope.html#section4">Our Work </a></li>
+      <li> <a href="ourwork.html" target="_blank">Contact </a></li>
+      <li> <a href="hope.html#section6">Media </a></li>
+    </ul>
+  </nav>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      // Toggle the "open" class for both the menu and hamburger
+      navLinks.classList.toggle('open');
+      hamburger.classList.toggle('open');
+    });
+  </script>
+
+  <div id="section1-contact">
+    <section>
+      <h1 class="title-contact">Services</h1>
+    </section>
+  </div>
+  <hr class="line">
+
+  <div id="container2">
+    <!-- Section 1 -->
+    <div id="section1">
+      <div class="image2">
+        <img src="photo/house3.png" alt="Door Reinforcement">
+      </div>
+      <div class="text2">
+        <h2>Door Reinforcement</h2>
+        <p>
+          We team up with Night Lock to strengthen door security, safeguarding your home against break-ins and providing
+          a
+          barricade to protect your valuables and loved ones.
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div id="section2">
+      <div class="image2">
+        <img src="photo/house3.png" alt="Glass Reinforcement">
+      </div>
+      <div class="text2">
+        <h2>Glass Reinforcement</h2>
+        <p>
+          Applying security film to glass greatly enhances its structural integrity, making it much more difficult to
+          break and
+          gain access to the interior of the building or home.
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div id="section3">
+      <div class="image2">
+        <img src="photo/house3.png" alt="Window Frame Reinforcement">
+      </div>
+      <div class="text2">
+        <h2>Window Frame Reinforcement</h2>
+        <p>
+          Windows are often considered one of the most vulnerable areas of a home. By applying security film, we not
+          only
+          reinforce the glass themselves but also enhance the strength of the window frames and hardware.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <form id="projectForm" action="https://formspree.io/f/xlderznj" method="POST">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" autocomplete="name" required><br><br>
+  
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" autocomplete="email" required><br><br>
+  
+    <label for="phone">Phone Number:</label><br>
+    <input type="tel" id="phone" name="phone" autocomplete="tel" required><br><br>
+  
+    <label for="summary">Project Summary:</label><br>
+    <textarea id="summary" name="summary" autocomplete="off" rows="5" required></textarea><br><br>
+  
+    <input type="submit" value="Send">
+  </form>
+
+  <script>
+    const form = document.getElementById('projectForm');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+        .then(response => {
+          if (response.ok) {
+            alert('Email successfully sent!');
+            form.reset();
+          } else {
+            response.json().then(data => {
+              if (Object.hasOwn(data, 'errors')) {
+                alert(data["errors"].map(error => error["message"]).join(", "));
+              } else {
+                alert('Oops! There was a problem submitting your form');
+              }
+            });
+          }
+        })
+        .catch(error => {
+          alert('Oops! There was a problem submitting your form');
+        });
+    });
+  </script>
+
+  
+
+</body>
+
+</html>
